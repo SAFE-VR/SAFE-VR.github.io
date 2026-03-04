@@ -1,0 +1,54 @@
+navbar_entries:
+  - title: members
+    url: about
+
+  - title: publication
+    url: "#publication"
+
+  - title: about us
+    url: "#about-us"
+
+project_entries:
+  - title: Haoran Yun
+    url: about
+    desc: SAFE-VR team member
+
+  - title: Member 2
+    url: false
+    desc: Add member bio and profile link
+
+  - title: Member 3
+    url: false
+    desc: Add member bio and profile link
+
+old_project_entries:
+  - title: Publication 1
+    url: false
+    desc: Add publication title, venue, and year
+
+  - title: Publication 2
+    url: false
+    desc: Add publication title, venue, and year
+
+  - title: Publication 3
+    url: false
+    desc: Add publication title, venue, and year
+
+footer_entries:
+  - title: SAFE-VR
+    url: /
+
+  - title: github
+    url: https://github.com/SAFE-VR
+
+  - title: feed
+    url: feed.xml
+
+misc_entries:
+  - title: SAFE-VR is focused on Safety and Awareness For Everyone in Virtual.
+    url: false
+
+  - title: Learn more about our mission and team.
+    url: about
+
+
