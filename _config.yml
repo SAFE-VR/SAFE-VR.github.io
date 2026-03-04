@@ -1,0 +1,5 @@
+title: "SAFE-VR"
+description: "Safety and Awareness For Everyone in Virtual"
+theme: minima
+plugins:
+  - jekyll-feed
