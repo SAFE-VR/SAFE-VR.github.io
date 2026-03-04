@@ -65,31 +65,31 @@ img {
 }
 @mixin light-appearance {
   html, body {
-      --bg: #ffe4ec;
-      --bg-secondary: #ffd2e0;
-      --headings: #9d174d;
-      --text: #4a1d33;
-      --text-secondary: #7a3b5c;
-      --links: #db2777;
-      --highlight: #fecdd3;
-      --accent: #f97316;
-      --code-text: #be185d;
-      --share-text: #7a3b5c;
+      --bg: #FFEDD5;
+      --bg-secondary: #ffd3b8;
+      --headings: #EA580C;
+      --text: #3f3f46;
+      --text-secondary: #78716c;
+      --links: #f97316;
+      --highlight: #fde047;
+      --accent: #ec4899;
+      --code-text: #c2410c;
+      --share-text: #78716c;
   }
 }
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
   html, body  {
-      --bg: #2a1020;
-      --bg-secondary: #3b1730;
-      --headings: #f9a8d4;
-      --text: #fde7f3;
-      --text-secondary: #f5b5d6;
-      --links: #f472b6;
-      --highlight: #fb7185;
-      --accent: #fb923c;
-      --code-text: #fbcfe8;
-      --share-text: #f5b5d6;
+      --bg: #1a0f0a;
+      --bg-secondary: #2a1a12;
+      --headings: #fed7aa;
+      --text: #fde7d7;
+      --text-secondary: #fca5a5;
+      --links: #fb923c;
+      --highlight: #facc15;
+      --accent: #f472b6;
+      --code-text: #fdba74;
+      --share-text: #fca5a5;
   };
 }
 
