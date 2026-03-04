@@ -11,7 +11,7 @@ navbar_entries:
 project_entries:
   - title: Haoran Yun
     url: about
-    desc: SAFE-VR team member
+    desc: MSCA Postdoc Fellow
 
   - title: Member 2
     url: false
@@ -41,14 +41,10 @@ footer_entries:
   - title: github
     url: https://github.com/SAFE-VR
 
-  - title: feed
-    url: feed.xml
-
 misc_entries:
   - title: SAFE-VR is focused on Safety and Awareness For Everyone in Virtual.
     url: false
 
   - title: Learn more about our mission and team.
     url: about
-
 
