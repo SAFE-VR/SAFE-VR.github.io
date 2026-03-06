@@ -2,31 +2,68 @@
 layout: default
 ---
 
-<header>
-{% if site.theme_config.show_navbar == true %}
-  {% include horizontal_list.html collection=site.data.home.navbar_entries %}
-  <div class="dashed"></div>
-{% endif %}
+{% assign selected_section = page.home_section | default: "all" %}
 
-  <h1>{{ site.title }}</h1>
-  {% if site.theme_config.show_description == true %}
-    <p>{{ site.description }}</p>
-  {% endif %}
-</header>
+<header{% if selected_section == "landing" %} class="home-header-landing"{% endif %}></header>
 
 {{ content }}
 
+{% if selected_section == "landing" %}
+  <section class="duna-hero duna-page-shell duna-landing-shell">
+    <div class="duna-nav-row">
+      <a href="/" class="duna-brand">SAFE-VR</a>
+      {% include horizontal_list.html collection=site.data.home.navbar_entries class_name="duna-nav" link_class="duna-nav-link" %}
+     
+    </div>
 
+    <div class="duna-image-panel">
+      <!-- <div class="duna-floating-panel">
+        <div>
+          <p class="duna-panel-title">Research Areas</p>
+          <p>VR Safety</p>
+          <p>Human Awareness</p>
+          <p>Immersive Interaction</p>
+        </div>
+        <div>
+          <p class="duna-panel-title">Explore</p>
+          <p><a href="/members/">Members</a></p>
+          <p><a href="/publication/">Publications</a></p>
+          <p><a href="/news/">News</a></p>
+        </div>
+      </div> -->
+    </div>
 
-{% if site.theme_config.show_misc_list == true %}
-  <h2>{{ site.theme_config.home.title_misc_list }}</h2>
-  {% include vertical_list.html collection=site.data.home.misc_entries %}
+    <div class="duna-copy">
+      <h1>Safety and Awareness in Virtual Reality</h1>
+      {% if site.theme_config.show_description == true %}
+        <p>{{ site.description }}</p>
+      {% endif %}
+      <a href="/publication/" class="duna-start">Get started</a>
+    </div>
+  </section>
+
+  <section class="eu-funding-banner" aria-label="EU funding acknowledgement">
+    <img
+      class="eu-funding-image"
+      src="{{ '/assets/images/eu%20funding/EN_FundedbytheEU_RGB_POS.png' | relative_url }}"
+      alt="Funded by the European Union"
+    />
+  </section>
+{% else %}
+  <section class="duna-hero duna-page-shell">
+    <div class="duna-nav-row">
+      <a href="/" class="duna-brand">SAFE-VR</a>
+      {% include horizontal_list.html collection=site.data.home.navbar_entries class_name="duna-nav" link_class="duna-nav-link" %}
+    </div>
+    <div class="duna-page-content">
+      {% include home_sections.html section=selected_section %}
+    </div>
+  </section>
 {% endif %}
 
 
 {% if site.theme_config.show_footer == true %}
   <footer>
-    <div class="dashed"></div>
-    {% include horizontal_list.html collection=site.data.home.footer_entries %}
+    {% include horizontal_list.html collection=site.data.home.footer_entries class_name="footer-nav" link_class="footer-nav-link" %}
   </footer>
 {% endif %}

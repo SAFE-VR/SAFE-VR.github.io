@@ -1,12 +1,18 @@
 navbar_entries:
+  - title: home
+    url: /
+
   - title: members
-    url: about
+    url: /members/
 
   - title: publication
-    url: "#publication"
+    url: /publication/
+
+  - title: news
+    url: /news/
 
   - title: about us
-    url: "#about-us"
+    url: /about-us/
 
 project_entries:
   - title: Haoran Yun
@@ -22,17 +28,42 @@ project_entries:
     desc: Add member bio and profile link
 
 old_project_entries:
-  - title: Publication 1
-    url: false
-    desc: Add publication title, venue, and year
+  - title: TBD
+    url: "#"
+    meta: TBD
+    desc: TBD
+    cta: TBD
 
-  - title: Publication 2
-    url: false
-    desc: Add publication title, venue, and year
+  - title: TBD
+    url: "#"
+    meta: TBD
+    desc: TBD
+    cta: TBD
 
-  - title: Publication 3
-    url: false
-    desc: Add publication title, venue, and year
+  - title: TBD
+    url: "#"
+    meta: TBD
+    desc: TBD
+    cta: TBD
+
+news_entries:
+  - title: TBD
+    url: "#"
+    meta: TBD
+    desc: TBD
+    cta: TBD
+
+  - title: TBD
+    url: "#"
+    meta: TBD
+    desc: TBD
+    cta: TBD
+
+  - title: TBD
+    url: "#"
+    meta: TBD
+    desc: TBD
+    cta: TBD
 
 footer_entries:
   - title: SAFE-VR
@@ -47,4 +78,3 @@ misc_entries:
 
   - title: Learn more about our mission and team.
     url: about
-
