@@ -36,7 +36,7 @@ theme_config:
   home:
     title_projects: Members
     title_blog: Blog
-    title_old_projects: Publication
+    title_old_projects: Publications
     title_news: News
     title_misc_list: About us
 

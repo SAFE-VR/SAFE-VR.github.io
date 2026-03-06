@@ -5,7 +5,7 @@ navbar_entries:
   - title: members
     url: /members/
 
-  - title: publication
+  - title: publications
     url: /publication/
 
   - title: news
@@ -73,7 +73,7 @@ footer_entries:
     url: https://github.com/SAFE-VR
 
 misc_entries:
-  - title: SAFE-VR is focused on Safety and Awareness For Everyone in Virtual.
+  - title: SAFE-VR is focused on Safety and Awareness For Everyone in Virtual Reality.
     url: false
 
   - title: Learn more about our mission and team.
