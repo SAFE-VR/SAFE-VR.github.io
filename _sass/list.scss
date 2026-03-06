@@ -79,6 +79,14 @@ ul.horizontal-list {
 
 }
 
+html[data-theme="dark"] .card {
+  background:
+    radial-gradient(circle at 16% 14%, color-mix(in srgb, var(--primary) 28%, transparent), transparent 48%),
+    radial-gradient(circle at 84% 86%, color-mix(in srgb, var(--support) 24%, transparent), transparent 44%),
+    linear-gradient(150deg, #18243a 0%, #1c2a44 52%, #223252 100%);
+  box-shadow: 0 12px 24px rgba(3, 8, 20, 0.45);
+}
+
 /* Responsive cards - one column layout on small screens */
 @media screen and (max-width: 600px) {
   ul.horizontal-list li.card {
