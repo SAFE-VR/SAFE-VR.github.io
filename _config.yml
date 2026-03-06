@@ -2,7 +2,7 @@ title: SAFE-VR
 author: Haoran Yun
 url: https://safe-vr.github.io # root address of the site
 description: > # description of the site (multiple lines allowed)
-  Safety and Awareness For Everyone in Virtual.
+  Safety and Awareness For Everyone in Virtual Reality.
 
 permalink: /:slug
 
@@ -36,7 +36,7 @@ theme_config:
   home:
     title_projects: Members
     title_blog: Blog
-    title_old_projects: Publications
+    title_old_projects: Publication
     title_news: News
     title_misc_list: About us
 
