@@ -24,7 +24,7 @@
                   <div class="feature-card-link">
                 {% endif %}
                   <div
-                    class="feature-card-media {% if item.image %}has-image{% endif %}"
+                    class="feature-card-media {% if item.image %}has-image{% endif %}{% if item.tone %} {{ item.tone }}{% endif %}"
                     {% if item.image %}style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.88)), url('{{ item.image }}');"{% endif %}
                   >
                     {% if item.meta %}<p class="feature-card-tag">{{ item.meta }}</p>{% endif %}
@@ -77,7 +77,7 @@
               <div class="feature-card-link">
             {% endif %}
               <div
-                class="feature-card-media {% if item.image %}has-image{% endif %}"
+                class="feature-card-media {% if item.image %}has-image{% endif %}{% if item.tone %} {{ item.tone }}{% endif %}"
                 {% if item.image %}style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.88)), url('{{ item.image }}');"{% endif %}
               >
                 {% if item.meta %}<p class="feature-card-tag">{{ item.meta }}</p>{% endif %}
@@ -101,20 +101,31 @@
   {% if site.theme_config.show_news == true and site.data.home.news_entries %}
     <section>
       <h2 id="news">{{ site.theme_config.home.title_news }}</h2>
-      <aside class="news-panel news-panel-full">
-        <ul class="news-panel-list">
-          {% for item in site.data.home.news_entries %}
-            <li>
-              {% if item.url and item.url != false %}<a href="{{ item.url }}">{% endif %}
-                {% if item.meta %}<p class="news-date">{{ item.meta }}</p>{% endif %}
+      <ul class="feature-cards">
+        {% for item in site.data.home.news_entries %}
+          <li class="feature-card">
+            {% if item.url and item.url != false %}
+              <a href="{{ item.url }}" class="feature-card-link">
+            {% else %}
+              <div class="feature-card-link">
+            {% endif %}
+              <div
+                class="feature-card-media {% if item.image %}has-image{% endif %}{% if item.tone %} {{ item.tone }}{% endif %}"
+                {% if item.image %}style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.88)), url('{{ item.image }}');"{% endif %}
+              >
+                {% if item.meta %}<p class="feature-card-tag">{{ item.meta }}</p>{% endif %}
                 <h3>{{ item.title }}</h3>
-                {% if item.desc and item.desc != false %}<p class="news-desc">{{ item.desc }}</p>{% endif %}
-                {% if item.cta %}<span class="news-cta">{{ item.cta }}</span>{% endif %}
-              {% if item.url and item.url != false %}</a>{% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </aside>
+                {% if item.desc and item.desc != false %}<p>{{ item.desc }}</p>{% endif %}
+                {% if item.cta %}<span class="feature-card-cta">{{ item.cta }}</span>{% endif %}
+              </div>
+            {% if item.url and item.url != false %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
     </section>
   {% endif %}
 {% endif %}

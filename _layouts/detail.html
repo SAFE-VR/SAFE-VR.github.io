@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<section class="duna-hero duna-page-shell">
+  <div class="duna-nav-row">
+    <a href="/" class="duna-brand">SAFE-VR</a>
+    {% include horizontal_list.html collection=site.data.home.navbar_entries class_name="duna-nav" link_class="duna-nav-link" %}
+  </div>
+
+  <div class="duna-page-content">
+    <article class="detail-page">
+      {% if page.meta %}
+        <p class="detail-meta">{{ page.meta }}</p>
+      {% endif %}
+
+      <h1 class="detail-title">{{ page.title }}</h1>
+
+      {% if page.summary %}
+        <p class="detail-summary">{{ page.summary }}</p>
+      {% endif %}
+
+      <div class="detail-body{% if page.unboxed_content == true %} detail-body-plain{% endif %}">
+        {{ content }}
+      </div>
+    </article>
+  </div>
+</section>
+
+{% if site.theme_config.show_footer == true %}
+  <footer>
+    {% include horizontal_list.html collection=site.data.home.footer_entries class_name="footer-nav" link_class="footer-nav-link" %}
+  </footer>
+{% endif %}

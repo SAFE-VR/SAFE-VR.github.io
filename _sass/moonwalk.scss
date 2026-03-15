@@ -357,10 +357,15 @@ p code, li code {
 }
 
 .duna-brand {
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   color: var(--headings);
   font-weight: 700;
   letter-spacing: 0.02em;
+  font-size: 1.05rem;
+  position: relative;
+  z-index: 3;
 }
 
 .duna-nav {
@@ -393,12 +398,18 @@ p code, li code {
   margin: 0 1.3rem;
   border-radius: 0.9rem;
   min-height: 360px;
-  background:
-    radial-gradient(circle at 70% 68%, rgba(236, 201, 170, 0.6), rgba(236, 201, 170, 0) 33%),
-    radial-gradient(circle at 15% 24%, rgba(255, 226, 181, 0.8), rgba(255, 226, 181, 0) 27%),
-    radial-gradient(circle at 75% 22%, rgba(255, 197, 144, 0.8), rgba(255, 197, 144, 0) 25%),
-    linear-gradient(180deg, #ede4cf 0%, #f4d4ac 31%, #f5cda5 58%, #f5dac8 100%);
+  background: linear-gradient(180deg, #ede4cf 0%, #f5dac8 100%);
   position: relative;
+  overflow: hidden;
+}
+
+.duna-hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .duna-image-panel::after {
@@ -406,9 +417,10 @@ p code, li code {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 42%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.88) 90%);
+  top: 0;
+  bottom: auto;
+  height: 48%;
+  background: linear-gradient(180deg, rgba(231, 247, 255, 0.58) 0%, rgba(231, 247, 255, 0.18) 66%, rgba(231, 247, 255, 0) 100%);
   border-bottom-left-radius: 0.9rem;
   border-bottom-right-radius: 0.9rem;
 }
@@ -450,8 +462,11 @@ p code, li code {
 }
 
 .duna-copy {
-  padding: 1.8rem 1.2rem 2.1rem;
+  position: absolute;
+  inset: 0 0 auto 0;
+  padding: 2rem 1.4rem 0;
   text-align: center;
+  z-index: 2;
 }
 
 .duna-copy h1 {
@@ -479,15 +494,30 @@ p code, li code {
 }
 
 html[data-theme="dark"] .duna-image-panel {
-  background:
-    radial-gradient(circle at 72% 66%, rgba(105, 108, 161, 0.36), rgba(105, 108, 161, 0) 34%),
-    radial-gradient(circle at 16% 24%, rgba(78, 107, 156, 0.42), rgba(78, 107, 156, 0) 28%),
-    radial-gradient(circle at 75% 22%, rgba(140, 93, 73, 0.34), rgba(140, 93, 73, 0) 26%),
-    linear-gradient(180deg, #1b2538 0%, #24314b 34%, #2a3650 58%, #34425f 100%);
+  background: linear-gradient(180deg, #1b2538 0%, #34425f 100%);
 }
 
 html[data-theme="dark"] .duna-image-panel::after {
-  background: linear-gradient(180deg, rgba(11, 18, 32, 0) 0%, rgba(11, 18, 32, 0.82) 90%);
+  top: 0;
+  bottom: auto;
+  height: 54%;
+  background: linear-gradient(180deg, rgba(4, 10, 22, 0.82) 0%, rgba(4, 10, 22, 0.42) 68%, rgba(4, 10, 22, 0) 100%);
+}
+
+html[data-theme="dark"] .duna-copy h1 {
+  color: #f7fafc;
+  text-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] .duna-copy p {
+  color: rgba(241, 245, 249, 0.86);
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+}
+
+html[data-theme="dark"] .duna-start {
+  background: rgba(248, 250, 252, 0.94);
+  color: #111827;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
 }
 
 .footer-nav {
@@ -556,6 +586,10 @@ html[data-theme="dark"] .duna-image-panel::after {
     min-height: 300px;
   }
 
+  .duna-hero-image {
+    min-height: 300px;
+  }
+
   .duna-floating-panel {
     position: static;
     transform: none;
@@ -567,5 +601,9 @@ html[data-theme="dark"] .duna-image-panel::after {
 
   .duna-copy h1 {
     font-size: clamp(1.65rem, 8vw, 2.2rem);
+  }
+
+  .duna-copy {
+    padding: 1.25rem 1rem 0;
   }
 }

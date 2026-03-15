@@ -2,9 +2,6 @@ navbar_entries:
   - title: home
     url: /
 
-  - title: members
-    url: /members/
-
   - title: publications
     url: /publication/
 
@@ -28,42 +25,40 @@ project_entries:
     desc: Add member bio and profile link
 
 old_project_entries:
-  - title: TBD
-    url: "#"
-    meta: TBD
-    desc: TBD
-    cta: TBD
+  # When you have a real paper, set `url` to a page like `/publication/my-paper/`
+  # and remove `tone`/placeholder text. Example page template:
+  # `publication/example-paper.md`
+- title: First SAFE-VR Paper
+  url: /publication/example-paper/
+  meta: In Preparation
+  desc: Publications are currently rendering in VR ⏳ 
+  cta: Read more
 
-  - title: TBD
-    url: "#"
-    meta: TBD
-    desc: TBD
-    cta: TBD
-
-  - title: TBD
-    url: "#"
-    meta: TBD
-    desc: TBD
-    cta: TBD
 
 news_entries:
-  - title: TBD
-    url: "#"
-    meta: TBD
-    desc: TBD
-    cta: TBD
-
-  - title: TBD
-    url: "#"
-    meta: TBD
-    desc: TBD
-    cta: TBD
-
-  - title: TBD
-    url: "#"
-    meta: TBD
-    desc: TBD
-    cta: TBD
+  # # When you have a real news item, set `url` to a page like `/news/my-update/`
+  # # and remove `tone`/placeholder text. Example page template:
+  # # `news/example-update.md`
+  # - title: News
+  #   url: /news/example-update/
+  #   meta: Coming Soon
+  #   desc: We'll bring GOOD NEWS later!
+  #   cta: Read more
+  #   tone: news-placeholder
+- title: SAFE-VR Project Launch!
+  url: https://team.inria.fr/seamless/
+  meta: Feb 2026
+  desc: The SAFE-VR project officially begins at the Seamless team, Inria Rennes.
+  cta: Learn more about SEAMLESS
+  # # When you have a real news item, set `url` to a page like `/news/my-update/`
+  # # and remove `tone`/placeholder text. Example page template:
+  # `news/example-update.md`
+- title: More Updates Coming
+  url: /news/example-update/
+  meta: Coming Soon
+  desc: Good news is rendering in VR… stay tuned! 🚀
+  cta: Read more
+  tone: news-placeholder
 
 footer_entries:
   - title: SAFE-VR
@@ -73,8 +68,32 @@ footer_entries:
     url: https://github.com/SAFE-VR
 
 misc_entries:
-  - title: SAFE-VR is focused on Safety and Awareness For Everyone in Virtual Reality.
-    url: false
+  - title: SAFE-VR is a MSCA Postdoc project.
+    url: https://cordis.europa.eu/project/id/101209380
 
-  - title: Learn more about our mission and team.
-    url: about
+  - title: >
+      Social virtual reality (VR) is rapidly transforming how people interact. It
+      creates immersive virtual spaces for social engagement, such as leisure
+      activities, remote work, training, and other social events. However, the
+      rise of these platforms has brought significant challenges to user safety.
+      The SAFE-VR (Safety and Awareness For Everyone in Virtual Reality) project
+      aims to develop a comprehensive system to mitigate harassment in social VR
+      by automatically detecting it and providing immediate user support. The
+      first objective will be achieved by analyzing group movement patterns with
+      machine learning methods to detect harassment in social VR. The second
+      objective consists of two parts: 1) dynamic, context-aware personal
+      boundaries that adjust based on the nature of interactions and user
+      preferences, and 2) an intuitive reporting system that automatically
+      captures relevant data when harassment is detected or a report is
+      initiated, easing the process for users. These solutions will be
+      integrated and delivered through the open-source SAFE-VR platform.
+      Perceptual studies will be conducted to evaluate the platform's
+      efficiency, effectiveness, and its impact on user behavior and sense of
+      safety. An industrial secondment with Virtual Bodyworks, a company
+      specializing in VR for behavioral change in corporate and rehabilitation
+      settings, will provide opportunities to explore real customer needs and
+      tailor the SAFE-VR platform for their commercial VR applications. By
+      delivering adaptable safety mechanisms, this project has the potential to
+      influence future social VR safety standards and benefit developers, users,
+      and policymakers.
+    url: false

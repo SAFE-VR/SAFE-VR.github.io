@@ -2,11 +2,15 @@
 layout: default
 ---
 
-{% assign selected_section = page.home_section | default: "all" %}
+{% assign selected_section = page.home_section %}
+{% if selected_section == nil or selected_section == "" %}
+  {% assign selected_section = page.url | replace: "/", "" %}
+{% endif %}
+{% if selected_section == nil or selected_section == "" %}
+  {% assign selected_section = "all" %}
+{% endif %}
 
 <header{% if selected_section == "landing" %} class="home-header-landing"{% endif %}></header>
-
-{{ content }}
 
 {% if selected_section == "landing" %}
   <section class="duna-hero duna-page-shell duna-landing-shell">
@@ -17,6 +21,18 @@ layout: default
     </div>
 
     <div class="duna-image-panel">
+      <img
+        src="{{ '/hero.png' | relative_url }}"
+        alt="SAFE-VR hero image"
+        class="duna-hero-image"
+      />
+      <div class="duna-copy">
+        <h1>Safety and Awareness in Virtual Reality</h1>
+        {% if site.theme_config.show_description == true %}
+          <p>{{ site.description }}</p>
+        {% endif %}
+        <a href="/about-us/" class="duna-start">Explore More</a>
+      </div>
       <!-- <div class="duna-floating-panel">
         <div>
           <p class="duna-panel-title">Research Areas</p>
@@ -33,13 +49,6 @@ layout: default
       </div> -->
     </div>
 
-    <div class="duna-copy">
-      <h1>Safety and Awareness in Virtual Reality</h1>
-      {% if site.theme_config.show_description == true %}
-        <p>{{ site.description }}</p>
-      {% endif %}
-      <a href="/publication/" class="duna-start">Get started</a>
-    </div>
   </section>
 
   <section class="eu-funding-banner" aria-label="EU funding acknowledgement">
