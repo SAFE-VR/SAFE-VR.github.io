@@ -2,16 +2,25 @@
   {% for item in include.collection %}
     {% assign has_url = false %}
     {% if item.url and item.url != false %}{% assign has_url = true %}{% endif %}
+    {% assign card_image = nil %}
+    {% if item.image %}
+      {% if item.image contains "://" %}
+        {% assign card_image = item.image %}
+      {% else %}
+        {% assign image_file = site.static_files | where: "path", item.image | first %}
+        {% if image_file %}{% assign card_image = item.image | relative_url %}{% endif %}
+      {% endif %}
+    {% endif %}
     {% assign is_external = false %}
     {% if has_url and item.url contains "://" %}{% assign is_external = true %}{% endif %}
-    <li class="item-card{% if item.tone %} {{ item.tone }}{% endif %}{% if item.image %} has-image{% endif %}">
+    <li class="item-card{% if item.tone %} {{ item.tone }}{% endif %}{% if card_image %} has-image{% endif %}">
       {% if has_url %}
         <a href="{{ item.url }}" class="item-card-link"{% if is_external %} target="_blank" rel="noreferrer"{% endif %}>
       {% else %}
         <div class="item-card-link">
       {% endif %}
-        {% if item.image %}
-          <div class="item-card-image" style="background-image: url('{{ item.image }}');"></div>
+        {% if card_image %}
+          <div class="item-card-image" style="background-image: url('{{ card_image }}');"></div>
         {% endif %}
         <div class="item-card-body">
           {% if item.meta %}<p class="item-card-tag">{{ item.meta }}</p>{% endif %}

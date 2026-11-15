@@ -2,6 +2,12 @@
 layout: default
 ---
 
+{% assign cover = nil %}
+{% if page.image %}
+  {% assign cover_file = site.static_files | where: "path", page.image | first %}
+  {% if cover_file %}{% assign cover = page.image | relative_url %}{% endif %}
+{% endif %}
+
 <section class="page-header">
   <div class="container container-narrow">
     {% if page.parent_url %}
@@ -19,6 +25,31 @@ layout: default
 
 <section class="section section-tight">
   <article class="container container-narrow prose">
+    {% if cover %}
+      <img src="{{ cover }}" alt="{{ page.title }}" class="detail-cover" />
+    {% endif %}
+
     {{ content }}
+
+    {% if page.gallery and page.gallery.size > 0 %}
+      <div class="detail-gallery">
+        {% for photo in page.gallery %}
+          {% assign photo_file = site.static_files | where: "path", photo | first %}
+          {% if photo_file %}
+            <a href="{{ photo | relative_url }}" target="_blank" rel="noreferrer">
+              <img src="{{ photo | relative_url }}" alt="{{ page.title }}, photo {{ forloop.index }}" loading="lazy" />
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if page.links and page.links.size > 0 %}
+      <div class="detail-links">
+        {% for link in page.links %}
+          <a href="{{ link.url }}" class="btn btn-ghost" target="_blank" rel="noreferrer">{{ link.title }} <span class="arrow" aria-hidden="true">↗</span></a>
+        {% endfor %}
+      </div>
+    {% endif %}
   </article>
 </section>

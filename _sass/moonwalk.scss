@@ -2,76 +2,76 @@
 
 // ------------------------------------------------------------
 // Design tokens
-// Warm minimal: cream surfaces and warm neutrals, with purple as
-// the signature accent (the colour of domestic-violence awareness).
-// Supporting tints: peach, sage and mustard.
+// Clean cool-white surfaces with purple as the signature accent
+// (the colour of domestic-violence awareness), teal as the secondary
+// accent, and soft lavender / rose / teal tints for cards.
 // ------------------------------------------------------------
 
 @mixin light-appearance {
-  --bg: #fbf7f1;
-  --bg-alt: #f5eee4;
-  --surface: #fffdf9;
-  --surface-2: #f6efe6;
+  --bg: #fafafd;
+  --bg-alt: #f3f1f9;
+  --surface: #ffffff;
+  --surface-2: #f4f2fa;
 
-  --ink: #2a221c;
-  --text: #4a4038;
-  --muted: #7a6e63;
+  --ink: #17142b;
+  --text: #45425a;
+  --muted: #6e6a85;
 
   --primary: #6b3fa0;
   --primary-hover: #57308a;
   --on-primary: #ffffff;
 
-  --lavender: #ece0f7;
-  --pink: #f8dfd2;
-  --mint: #dcebe1;
-  --butter: #f7e8c0;
+  --lavender: #efe6fb;
+  --pink: #fbe7f2;
+  --mint: #dcf3ee;
+  --butter: #e6eefd;
 
   --lavender-ink: #5a2f8c;
-  --pink-ink: #9a3f26;
-  --mint-ink: #2f6248;
+  --pink-ink: #a3346f;
+  --mint-ink: #19766a;
 
-  --border: #ebe1d3;
-  --border-strong: #dccfbd;
-  --shadow: 0 1px 2px rgba(42, 34, 28, 0.04);
-  --shadow-hover: 0 2px 4px rgba(42, 34, 28, 0.05), 0 14px 30px rgba(42, 34, 28, 0.08);
-  --header-bg: rgba(251, 247, 241, 0.86);
+  --border: #e7e4f0;
+  --border-strong: #d4cfe4;
+  --shadow: 0 1px 2px rgba(23, 20, 43, 0.04);
+  --shadow-hover: 0 2px 4px rgba(23, 20, 43, 0.05), 0 14px 30px rgba(23, 20, 43, 0.09);
+  --header-bg: rgba(255, 255, 255, 0.82);
 
-  --code-bg: #f3eaf9;
+  --code-bg: #f1eafb;
   --code-text: #5a2f8c;
 
   color-scheme: light;
 }
 
 @mixin dark-appearance {
-  --bg: #1a1614;
-  --bg-alt: #201b18;
-  --surface: #241f1c;
-  --surface-2: #2c2622;
+  --bg: #0f0e17;
+  --bg-alt: #15131f;
+  --surface: #1b1927;
+  --surface-2: #232031;
 
-  --ink: #f6efe7;
-  --text: #d8cec3;
-  --muted: #a89c90;
+  --ink: #f3f1fa;
+  --text: #cfcbe0;
+  --muted: #9a96b0;
 
   --primary: #c5a3f0;
   --primary-hover: #d6bdf6;
-  --on-primary: #221832;
+  --on-primary: #1e1530;
 
-  --lavender: #3a2c4d;
-  --pink: #4a2e24;
-  --mint: #23382f;
-  --butter: #3d3320;
+  --lavender: #2e2347;
+  --pink: #3a2034;
+  --mint: #153431;
+  --butter: #1d2742;
 
   --lavender-ink: #d9c2f7;
-  --pink-ink: #f3bca6;
-  --mint-ink: #a9d8bd;
+  --pink-ink: #f2a9cf;
+  --mint-ink: #8fdccd;
 
-  --border: #362e29;
-  --border-strong: #4a403a;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.3), 0 14px 30px rgba(0, 0, 0, 0.35);
-  --header-bg: rgba(26, 22, 20, 0.86);
+  --border: #2c2940;
+  --border-strong: #3d3956;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.35), 0 14px 30px rgba(0, 0, 0, 0.4);
+  --header-bg: rgba(15, 14, 23, 0.82);
 
-  --code-bg: #3a2c4d;
+  --code-bg: #2e2347;
   --code-text: #d9c2f7;
 
   color-scheme: dark;
@@ -264,7 +264,7 @@ html.transition *::after {
   -webkit-backdrop-filter: saturate(1.4) blur(16px);
   border: 1px solid var(--border);
   border-radius: 999px;
-  box-shadow: 0 6px 24px rgba(42, 34, 28, 0.06);
+  box-shadow: 0 6px 24px rgba(23, 20, 43, 0.06);
 }
 
 .brand {

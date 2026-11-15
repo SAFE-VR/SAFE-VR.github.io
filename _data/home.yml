@@ -47,29 +47,34 @@ old_project_entries:
 
 
 news_entries:
-  # # When you have a real news item, set `url` to a page like `/news/my-update/`
-  # # and remove `tone`/placeholder text. Example page template:
-  # # `news/example-update.md`
-  # - title: News
-  #   url: /news/example-update/
-  #   meta: Coming Soon
-  #   desc: We'll bring GOOD NEWS later!
-  #   cta: Read more
-  #   tone: news-placeholder
+  # Newest first. The home page shows the first three.
+  # `image` is optional: the card shows the photo once the file exists.
+- title: SAFE-VR demo at EuroXR
+  url: /news/euroxr-demo/
+  meta: Nov 2026
+  desc: We demonstrated the SAFE-VR platform at the EuroXR conference.
+  image: /assets/images/news/euroxr-demo/cover.jpg
+  cta: Read more
+
+- title: SAFE-VR at European Researchers' Night
+  url: /news/researchers-night/
+  meta: Sep 2026
+  desc: Visitors tried the SAFE-VR demo at European Researchers' Night.
+  image: /assets/images/news/researchers-night/cover.jpg
+  cta: Read more
+
+- title: Presenting SAFE-VR at ITW
+  url: /news/itw-talk/
+  meta: Jun 2026
+  desc: I presented the SAFE-VR project and its first results at ITW.
+  image: /assets/images/news/itw-talk/cover.jpg
+  cta: Read more
+
 - title: SAFE-VR Project Launch!
   url: https://team.inria.fr/seamless/
   meta: Feb 2026
   desc: The SAFE-VR project officially begins at the Seamless team, Inria Rennes.
   cta: Learn more about SEAMLESS
-  # # When you have a real news item, set `url` to a page like `/news/my-update/`
-  # # and remove `tone`/placeholder text. Example page template:
-  # `news/example-update.md`
-- title: More Updates Coming
-  url: /news/example-update/
-  meta: Coming Soon
-  desc: Good news is rendering in VR… stay tuned! 🚀
-  cta: Read more
-  tone: news-placeholder
 
 footer_entries:
   - title: SAFE-VR

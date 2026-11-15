@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jekyll",
+      "runtimeExecutable": "bundle",
+      "runtimeArgs": ["exec", "jekyll", "serve", "--port", "4000", "--destination", "C:/Users/hyun/AppData/Local/Temp/claude/4edaad3a48743018/15104189-e70d-40a4-9e71-d06646a1b61d/scratchpad/site"],
+      "port": 4000
+    }
+  ]
+}

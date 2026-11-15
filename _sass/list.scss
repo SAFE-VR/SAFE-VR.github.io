@@ -179,3 +179,38 @@ a.item-card-link:hover { color: inherit; }
 @media screen and (max-width: 520px) {
   .news-list a, .news-list li > div { grid-template-columns: 1fr; gap: 0.3rem; }
 }
+
+// ------------------------------------------------------------
+// Detail pages: cover photo, gallery, links
+// ------------------------------------------------------------
+
+.detail-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 0 0 2rem;
+  border-radius: 1.4rem;
+}
+
+.detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin: 2rem 0 0;
+
+  a { display: block; border-radius: 1rem; overflow: hidden; }
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  a:hover img { transform: scale(1.04); }
+}
+
+.detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 2rem 0 0;
+}

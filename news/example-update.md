@@ -2,7 +2,7 @@
 layout: detail
 title: Example News Title
 permalink: /news/example-update/
-published: true
+published: false
 parent_url: /news/
 back_text: Back to news
 meta: News
