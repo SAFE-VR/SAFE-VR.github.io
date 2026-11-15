@@ -1,0 +1,29 @@
+<ul class="item-grid">
+  {% for item in include.collection %}
+    {% assign has_url = false %}
+    {% if item.url and item.url != false %}{% assign has_url = true %}{% endif %}
+    {% assign is_external = false %}
+    {% if has_url and item.url contains "://" %}{% assign is_external = true %}{% endif %}
+    <li class="item-card{% if item.tone %} {{ item.tone }}{% endif %}{% if item.image %} has-image{% endif %}">
+      {% if has_url %}
+        <a href="{{ item.url }}" class="item-card-link"{% if is_external %} target="_blank" rel="noreferrer"{% endif %}>
+      {% else %}
+        <div class="item-card-link">
+      {% endif %}
+        {% if item.image %}
+          <div class="item-card-image" style="background-image: url('{{ item.image }}');"></div>
+        {% endif %}
+        <div class="item-card-body">
+          {% if item.meta %}<p class="item-card-tag">{{ item.meta }}</p>{% endif %}
+          <h3>{{ item.title }}</h3>
+          {% if item.desc and item.desc != false %}<p class="item-card-desc">{{ item.desc }}</p>{% endif %}
+          {% if item.cta %}<span class="item-card-cta">{{ item.cta }} <span aria-hidden="true">{% if is_external %}↗{% else %}→{% endif %}</span></span>{% endif %}
+        </div>
+      {% if has_url %}
+        </a>
+      {% else %}
+        </div>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

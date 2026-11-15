@@ -6,7 +6,7 @@ summary: SAFE-VR is building safer and more inclusive social virtual reality exp
 unboxed_content: true
 ---
 
-<div class="about-lead-card">
+<div class="callout">
   <p>
     SAFE-VR (Safety and Awareness For Everyone in Virtual Reality) is a research
     project funded by the Marie Sklodowska-Curie Postdoctoral Fellowship and
@@ -29,29 +29,7 @@ themselves.
 
 ## Research Directions
 
-<div class="about-pill-grid">
-  <section class="about-pill-card">
-    <h3>Harassment Detection</h3>
-    <p>
-      Identifying problematic interactions by analyzing group behavior in VR
-      environments.
-    </p>
-  </section>
-  <section class="about-pill-card">
-    <h3>User Safety Tools</h3>
-    <p>
-      Designing adaptive personal boundaries and improved reporting systems that
-      reduce the burden on victims.
-    </p>
-  </section>
-  <section class="about-pill-card">
-    <h3>SAFE-VR Platform</h3>
-    <p>
-      Building an open research platform that integrates these technologies to
-      study and improve safety in social VR.
-    </p>
-  </section>
-</div>
+{% include research_grid.html %}
 
 <!-- ## Interdisciplinary Approach
 

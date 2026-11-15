@@ -1,0 +1,29 @@
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="{{ '/' | relative_url }}" class="brand" aria-label="SAFE-VR home">
+      <img src="{{ '/assets/images/safe-vr-icon.png' | relative_url }}" alt="" class="brand-logo" width="38" height="38" />
+      <span class="brand-name">SAFE-VR</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {% for item in site.data.home.navbar_entries %}
+          {% assign item_url = item.url | relative_url %}
+          {% assign is_active = false %}
+          {% if item.url == "/" %}
+            {% if page.url == "/" or page.url == "/index.html" %}{% assign is_active = true %}{% endif %}
+          {% elsif page.url contains item.url %}
+            {% assign is_active = true %}
+          {% endif %}
+          <li>
+            <a href="{{ item_url }}" class="site-nav-link{% if is_active %} is-active{% endif %}"{% if is_active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    {% if site.theme_config.appearance_toggle %}
+      {% include toggle_theme_button.html %}
+    {% endif %}
+  </div>
+</header>

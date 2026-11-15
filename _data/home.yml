@@ -11,6 +11,17 @@ navbar_entries:
   - title: about us
     url: /about-us/
 
+research_entries:
+  - title: Harassment Detection
+    desc: Identifying problematic interactions by analyzing group behavior in VR environments.
+    tone: lavender
+  - title: User Safety Tools
+    desc: Designing adaptive personal boundaries and improved reporting systems that reduce the burden on victims.
+    tone: pink
+  - title: SAFE-VR Platform
+    desc: Building an open research platform that integrates these technologies to study and improve safety in social VR.
+    tone: mint
+
 project_entries:
   - title: Haoran Yun
     url: about

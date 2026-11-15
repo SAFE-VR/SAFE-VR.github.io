@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}" class="html" data-theme="{{ site.theme_config.appearance | default: "auto" }}">
-        {%- include head.html -%}
+  {%- include head.html -%}
   <body>
-    <main class="page-content" aria-label="Content">
-      <div class="w">
-        {{ content }}
-        {% if site.theme_config.appearance_toggle %}
-          {% include toggle_theme_button.html %}
-        {% endif %}
-        <div class="credits">
-          {%- if site.theme_config.show_copyright == true -%}
-          &copy;&nbsp;{{ "now" | date: "%Y" }}&nbsp;{{site.author}}
-          &nbsp;
+    {% include site_header.html %}
 
-          •
-          &nbsp;
-          {%- endif -%}
-          Theme&nbsp; <a href="https://github.com/abhinavs/moonwalk" target="_blank" rel="noreferrer">Moonwalk</a>
-        </div>
-      </div>
+    <main class="page-content" aria-label="Content">
+      {{ content }}
     </main>
+
+    {% include site_footer.html %}
+
+    <script>
+      (function () {
+        var items = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window) || !items.length) return;
+        document.documentElement.classList.add('js');
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        items.forEach(function (el, i) {
+          el.style.transitionDelay = (el.classList.contains('research-card') ? (i % 3) * 90 : 0) + 'ms';
+          io.observe(el);
+        });
+      })();
+    </script>
 
     {%- if site.soopr -%}
       {%- if site.soopr.publish_token and jekyll.environment == "production" -%}

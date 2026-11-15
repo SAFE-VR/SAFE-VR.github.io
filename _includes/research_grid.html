@@ -1,0 +1,18 @@
+<div class="research-grid">
+  {% for item in site.data.home.research_entries %}
+    <section class="research-card {{ item.tone }} reveal">
+      <span class="research-icon" aria-hidden="true">
+        {% case forloop.index %}
+          {% when 1 %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l5-5"/><circle cx="12" cy="12" r="1"/></svg>
+          {% when 2 %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          {% else %}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+        {% endcase %}
+      </span>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.desc }}</p>
+    </section>
+  {% endfor %}
+</div>

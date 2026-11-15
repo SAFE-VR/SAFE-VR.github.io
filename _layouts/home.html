@@ -10,69 +10,119 @@ layout: default
   {% assign selected_section = "all" %}
 {% endif %}
 
-<header{% if selected_section == "landing" %} class="home-header-landing"{% endif %}></header>
-
 {% if selected_section == "landing" %}
-  <section class="duna-hero duna-page-shell duna-landing-shell">
-    <div class="duna-nav-row">
-      <a href="/" class="duna-brand">SAFE-VR</a>
-      {% include horizontal_list.html collection=site.data.home.navbar_entries class_name="duna-nav" link_class="duna-nav-link" %}
-     
-    </div>
-
-    <div class="duna-image-panel">
-      <img
-        src="{{ '/hero.png' | relative_url }}"
-        alt="SAFE-VR hero image"
-        class="duna-hero-image"
-      />
-      <div class="duna-copy">
-        <h1>Safety and Awareness in Virtual Reality</h1>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="hero-badge"><span class="pulse-dot"></span>MSCA Postdoctoral Fellowship · Inria Rennes</span>
+        <h1>Safety and Awareness in <span class="underline">Virtual Reality</span></h1>
         {% if site.theme_config.show_description == true %}
-          <p>{{ site.description }}</p>
+          <p class="hero-lead">
+            {{ site.description }} We study how to detect harassment in social VR
+            and give people better tools to protect themselves.
+          </p>
         {% endif %}
-        <a href="/about-us/" class="duna-start">Explore More</a>
+        <div class="hero-actions">
+          <a href="{{ '/about-us/' | relative_url }}" class="btn btn-primary">About the project <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="{{ '/news/' | relative_url }}" class="btn btn-ghost">Latest news</a>
+        </div>
       </div>
-      <!-- <div class="duna-floating-panel">
-        <div>
-          <p class="duna-panel-title">Research Areas</p>
-          <p>VR Safety</p>
-          <p>Human Awareness</p>
-          <p>Immersive Interaction</p>
-        </div>
-        <div>
-          <p class="duna-panel-title">Explore</p>
-          <p><a href="/members/">Members</a></p>
-          <p><a href="/publication/">Publications</a></p>
-          <p><a href="/news/">News</a></p>
-        </div>
-      </div> -->
+
+      <div class="hero-visual" aria-hidden="true">
+        <span class="ripple ripple-1"></span>
+        <span class="ripple ripple-2"></span>
+        <span class="ripple ripple-3"></span>
+        <img src="{{ '/logo.png' | relative_url }}" alt="" class="hero-image" />
+      </div>
     </div>
-
   </section>
 
-  <section class="eu-funding-banner" aria-label="EU funding acknowledgement">
-    <img
-      class="eu-funding-image"
-      src="{{ '/assets/images/eu%20funding/EN_FundedbytheEU_RGB_POS.png' | relative_url }}"
-      alt="Funded by the European Union"
-    />
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Research directions</p>
+        <h2>Three ways we make social VR safer</h2>
+      </div>
+      {% include research_grid.html %}
+    </div>
   </section>
+
+  <section class="mission">
+    <div class="container">
+      <div class="mission-card reveal">
+        <p class="eyebrow">Our mission</p>
+        <p class="mission-quote">Everyone deserves to feel safe, <em>in every reality.</em></p>
+        <ul class="facts">
+          <li><strong>MSCA Fellowship</strong><span>Funded by the European Union</span></li>
+          <li><strong>Inria Rennes</strong><span>Hosted by the SEAMLESS team</span></li>
+          <li><strong>Open science</strong><span>Tools and data shared openly</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container split">
+      <div class="reveal">
+        <div class="section-head">
+          <p class="eyebrow">News</p>
+          <h2>What's happening</h2>
+        </div>
+        <ul class="news-list">
+          {% for item in site.data.home.news_entries limit: 3 %}
+            {% assign has_url = false %}
+            {% if item.url and item.url != false %}{% assign has_url = true %}{% endif %}
+            <li>
+              {% if has_url %}<a href="{{ item.url }}"{% if item.url contains "://" %} target="_blank" rel="noreferrer"{% endif %}>{% else %}<div>{% endif %}
+                <span class="news-date">{{ item.meta }}</span>
+                <span class="news-body">
+                  <strong>{{ item.title }}</strong>
+                  {% if item.desc %}<span>{{ item.desc }}</span>{% endif %}
+                </span>
+              {% if has_url %}</a>{% else %}</div>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/news/' | relative_url }}" class="text-link">All news →</a>
+      </div>
+
+      <div class="reveal">
+        <div class="section-head">
+          <p class="eyebrow">Publications</p>
+          <h2>Research output</h2>
+        </div>
+        {% include feature_card_list.html collection=site.data.home.old_project_entries %}
+        <a href="{{ '/publication/' | relative_url }}" class="text-link">All publications →</a>
+      </div>
+    </div>
+  </section>
+
 {% else %}
-  <section class="duna-hero duna-page-shell">
-    <div class="duna-nav-row">
-      <a href="/" class="duna-brand">SAFE-VR</a>
-      {% include horizontal_list.html collection=site.data.home.navbar_entries class_name="duna-nav" link_class="duna-nav-link" %}
-    </div>
-    <div class="duna-page-content">
-      {% include home_sections.html section=selected_section %}
+  {% case selected_section %}
+    {% when "news" %}
+      {% assign section_title = site.theme_config.home.title_news %}
+      {% assign section_intro = "Announcements, events and updates from the SAFE-VR project." %}
+      {% assign section_items = site.data.home.news_entries %}
+    {% when "publication" %}
+      {% assign section_title = site.theme_config.home.title_old_projects %}
+      {% assign section_intro = "Papers, datasets and tools produced by the SAFE-VR project." %}
+      {% assign section_items = site.data.home.old_project_entries %}
+    {% when "members" %}
+      {% assign section_title = site.theme_config.home.title_projects %}
+      {% assign section_intro = "The people behind SAFE-VR." %}
+      {% assign section_items = site.data.home.project_entries %}
+  {% endcase %}
+
+  <section class="page-header">
+    <div class="container">
+      <h1>{{ section_title }}</h1>
+      <p class="page-lead">{{ section_intro }}</p>
     </div>
   </section>
-{% endif %}
 
-
-{% if site.theme_config.show_footer == true %}
-  <footer>
-    {% include horizontal_list.html collection=site.data.home.footer_entries class_name="footer-nav" link_class="footer-nav-link" %}
-  </footer>
+  <section class="section section-tight">
+    <div class="container">
+      {% include feature_card_list.html collection=section_items %}
+    </div>
+  </section>
 {% endif %}
